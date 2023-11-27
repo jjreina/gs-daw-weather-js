@@ -7,14 +7,15 @@
     <title>Weather App</title>
   </head>
   <body>
-    <h1>Weather Dashboard</h1>
+    <h1 class="title_container">Weather Dashboard</h1>
     <div class="container">
-      <div class="select-city">select</div>
+      <span><strong>Select City:</strong></span>
+      <select id="city" class="select-city"></select>
       <div class="current-weather">
-        <h1>Málaga (2023-11-22)</h1>
-        <h6>Temperature: 15.40°C</h6>
-        <h6>Wind: 2.55 M/S</h6>
-        <h6>Humidity: 45%</h6>
+        <h1 id="local_time">City (____-__-__ __:__)</h1>
+        <h6>Temperature: __°C</h6>
+        <h6>Wind: __KpH</h6>
+        <h6>Humidity: __%</h6>
         <div class="container-forecast">
           <div class="card-forecast">uno</div>
           <div class="card-forecast">dos</div>

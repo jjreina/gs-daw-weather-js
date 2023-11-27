@@ -19,42 +19,42 @@ h1 {
 
 h6 {
   color: #fff;
-  margin-top: 12px;
+  margin-top: 10px;
   font-size: 1rem;
   font-weight: 500;
 }
 
+.title_container {
+  padding-left: 150px;
+}
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
   width: auto;
   height: 400px;
 }
 
 .select-city {
-  border: 1px solid green;
-  width: auto;
-  height: 200px;
+  margin: 0px 20px 0px 10px;
 }
 
 .current-weather {
   background: #5372f0;
-  border: 1px solid blue;
   height: 300px;
   width: 500px;
   display: flex;
   justify-content: start;
-  align-items: start;
+  align-items: center;
   flex-direction: column;
   border-radius: 10px;
-  padding: 10px;
+  box-shadow: 2px 2px 7px #5372f0;
+  padding: 5px;
 }
 
 .container-forecast {
   display: flex;
-  justify-content: center;
+  justify-content: end;
   padding: 5px;
   flex-wrap: wrap;
 }
@@ -64,5 +64,6 @@ h6 {
   margin: 10px;
   height: 100px;
   width: 100px;
+  box-shadow: 2px 2px 7px #6c757d;
   border-radius: 10px;
 }
