@@ -24,9 +24,9 @@ export const parseToForecastWeatherClass = (literalWeatherObject) => {
       let forecastWeaterArray = forecast.map((element) => {
         let forecastWeater = new Weather();
         forecastWeater.localtime = element.date;
-        forecastWeater.temp_c = element.day.avgtemp_c;
-        forecastWeater.wind_kph = element.day.maxwind_kph;
-        forecastWeater.humidity = element.day.avghumidity;
+        forecastWeater.temp_c = element.day.avgtemp_c; // Temperatura media
+        forecastWeater.wind_kph = element.day.maxwind_kph; // Viento maximo
+        forecastWeater.humidity = element.day.avghumidity; // Huemedad media
         return forecastWeater;
       });
       resolve(forecastWeaterArray);

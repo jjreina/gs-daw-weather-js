@@ -24,6 +24,15 @@ h6 {
   font-weight: 500;
 }
 
+p {
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+p:nth-child(1) {
+  margin-bottom: 20px;
+}
+
 .title_container {
   padding-left: 150px;
 }
@@ -63,7 +72,9 @@ h6 {
   background: #6c757d;
   margin: 10px;
   height: 100px;
-  width: 100px;
+  width: auto;
   box-shadow: 2px 2px 7px #6c757d;
   border-radius: 10px;
+  padding: 8px;
+  text-align: center;
 }
