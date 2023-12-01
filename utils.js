@@ -33,3 +33,40 @@ export const parseToForecastWeatherClass = (literalWeatherObject) => {
     }
   });
 };
+
+export const createCardForecast = (
+  containet_forecast_card,
+  forecastWeatherDay
+) => {
+  const div = document.createElement("div");
+  div.className = "card-forecast";
+
+  const pDate = document.createElement("p");
+  const pAvgTemp = document.createElement("p");
+  const pMaxWind = document.createElement("p");
+  const pAvgHum = document.createElement("p");
+
+  pAvgHum.textContent = "Avg Hum: __%";
+
+  pDate.textContent = forecastWeatherDay.localtime
+    ? forecastWeatherDay.localtime
+    : `Date(___-__-__)`;
+
+  pAvgTemp.textContent = forecastWeatherDay.temp_c
+    ? `Avg Temp: ${forecastWeatherDay.temp_c}ºC`
+    : `Avg Temp: __ºC`;
+
+  pMaxWind.textContent = forecastWeatherDay.wind_kph
+    ? `Max Wind: ${forecastWeatherDay.wind_kph}KpH`
+    : `Max Wind: __KpH`;
+
+  pAvgHum.textContent = forecastWeatherDay.humidity
+    ? `Avg Hum: ${forecastWeatherDay.humidity}%`
+    : `Avg Hum: __%`;
+
+  div.appendChild(pDate);
+  div.appendChild(pAvgTemp);
+  div.appendChild(pMaxWind);
+  div.appendChild(pAvgHum);
+  containet_forecast_card.appendChild(div);
+};
