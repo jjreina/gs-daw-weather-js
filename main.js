@@ -19,28 +19,36 @@ const weather = new Weather();
 
 // Se trae las provincias con premesas
 const setCities = async () => {
-  const dataCities = await fetch(url_cities_api);
-  const { results } = await dataCities.json();
-  results.forEach((city) => {
-    const option = document.createElement("option");
-    option.textContent = city.provincia;
-    citySelector.appendChild(option);
-  });
+  try {
+    const dataCities = await fetch(url_cities_api);
+    const { results } = await dataCities.json();
+    results.forEach((city) => {
+      const option = document.createElement("option");
+      option.textContent = city.provincia;
+      citySelector.appendChild(option);
+    });
+  } catch (error) {
+    console.log(new Error(error));
+  }
 };
 
 // Se trae los valores del tiempo por ciudad
 const setCurrentWeather = async (city) => {
-  const responseWeather = await fetch(
-    `${url_weather_api}${city}&days=3`,
-    weather_options
-  );
-  const dataWeather = await responseWeather.json();
-  const classWeather = await parseToWeatherClass(dataWeather, weather);
-  const classForecastWeather = await parseToForecastWeatherClass(dataWeather);
-  printCurrentWeatherInDOM(classWeather);
-  classForecastWeather.forEach((forecastWeatherDay) => {
-    createCardForecast(containet_forecast_card, forecastWeatherDay);
-  });
+  try {
+    const responseWeather = await fetch(
+      `${url_weather_api}${city}&days=3`,
+      weather_options
+    );
+    const dataWeather = await responseWeather.json();
+    const classWeather = await parseToWeatherClass(dataWeather, weather);
+    const classForecastWeather = await parseToForecastWeatherClass(dataWeather);
+    printCurrentWeatherInDOM(classWeather);
+    classForecastWeather.forEach((forecastWeatherDay) => {
+      createCardForecast(containet_forecast_card, forecastWeatherDay);
+    });
+  } catch (error) {
+    console.log(new Error(error));
+  }
 };
 
 // Añade evento al selector y lanza la función asincorna para rellenar los datos
