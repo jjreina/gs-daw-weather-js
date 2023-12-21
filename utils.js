@@ -1,9 +1,11 @@
 import { Weather } from "./weather";
 
+const ERROR_MESSAGE = "is not ok";
+
 export const parseToWeatherClass = (literalWeatherObject, weather) => {
   return new Promise((resolve, reject) => {
     if (literalWeatherObject === null || literalWeatherObject === undefined) {
-      reject(`${literalWeatherObject} is not ok`);
+      reject(`${literalWeatherObject} ${ERROR_MESSAGE}`);
     } else {
       weather.location = literalWeatherObject.location.name;
       weather.localtime = literalWeatherObject.location.localtime;
@@ -18,7 +20,7 @@ export const parseToWeatherClass = (literalWeatherObject, weather) => {
 export const parseToForecastWeatherClass = (literalWeatherObject) => {
   return new Promise((resolve, reject) => {
     if (literalWeatherObject === null || literalWeatherObject === undefined) {
-      reject(`${literalWeatherObject} is not ok`);
+      reject(`${literalWeatherObject} ${ERROR_MESSAGE}`);
     } else {
       let forecast = literalWeatherObject.forecast.forecastday;
       let forecastWeaterArray = forecast.map((element) => {
